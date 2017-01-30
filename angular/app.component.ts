@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { DxButton }  from './dx.button';
-import { DxRadioButton }  from './dx.radio.button';
+import { DxRadioGroup }  from './dx.radio.group';
 import { DxTemplateHost } from './dx.template.host';
 
 @Component({
@@ -8,10 +8,10 @@ import { DxTemplateHost } from './dx.template.host';
   template: `
   <dx-button text="OK" width="300px" type="default" (click)="onClick()"><div *dxTemplate="let data of 'content'">Templated {{data.text}}</div></dx-button>
   <div style="height: 20px"></div>
-  <dx-radio-button type="default" [selectedIndex]="1" [items]="['Item 1', 'Item 2', 'Item 3']"></dx-radio-button>
+  <dx-radio-group type="default" [selectedIndex]="1" [items]="['item 1', 'item 2', 'item 3']"></dx-radio-group>
   `,
   providers: [DxTemplateHost],
-  directives : [DxButton, DxRadioButton]
+  directives : [DxButton, DxRadioGroup]
 })
 export class AppComponent {
   onClick() {

@@ -1,5 +1,5 @@
-window.RadioButton = {
-  name: "radio-button",
+window.RadioGroup = {
+  name: "radio-group",
   getInitialOptions: function() {
     return {
       type: "normal",
@@ -11,9 +11,6 @@ window.RadioButton = {
   },
   getInitialState: function() {
     return {
-        //active: false,
-        hover: false,
-        focused: false
     };
   },
   render: function(createElement, options, state, setState) {
@@ -22,7 +19,7 @@ window.RadioButton = {
     var $element = createElement("<div>", {
         class: {
             "dx-widget": true,
-            "dx-radio-button": true,
+            "dx-radio-group": true,
             "dx-state-invisible": !options.visible,
             "dx-state-disabled": !!options.disabled
         },

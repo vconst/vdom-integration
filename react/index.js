@@ -74,7 +74,7 @@ window.onload = function() {
 
 
   var DxButton = createReactComponent(window.Button);
-  var DxRadioButton = createReactComponent(window.RadioButton);
+  var DxRadioGroup = createReactComponent(window.RadioGroup);
 
 
   ReactDOM.render(React.createElement("div", null,
@@ -97,10 +97,10 @@ window.onload = function() {
         { style: { height: 20 } }
       ), 
       React.createElement(
-        DxRadioButton,
+        DxRadioGroup,
         {
-          items: ["items 1", "item 2", "item 3"],
-          selectedIndex: 2,
+          items: ["item 1", "item 2", "item 3"],
+          selectedIndex: 1,
           type: "default"
         }
     )

@@ -6,8 +6,8 @@ $(function() {
     return this;
   };
 
-  $.fn.dxRadioButton = function(options) {
-    v.createComponent(this[0], window.RadioButton, options);
+  $.fn.dxRadioGroup = function(options) {
+    v.createComponent(this[0], window.RadioGroup, options);
     return this;
   };
 
@@ -23,8 +23,8 @@ $(function() {
     }
   });
 
-  $("#radio").dxRadioButton({
-    items: ["items 1", "item 2", "item 3"],
+  $("#radio").dxRadioGroup({
+    items: ["item 1", "item 2", "item 3"],
     selectedIndex: 1,
     type: "default"
   });

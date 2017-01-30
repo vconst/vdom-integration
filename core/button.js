@@ -6,7 +6,6 @@ window.Button = {
       visible: true,
       disabled: false,
       tabIndex: "0",
-      active: true,
       template: "content"
     };
   },
@@ -24,13 +23,15 @@ window.Button = {
   },
   getInitialState: function() {
     return {
-        //active: false,
+        active: false,
         hover: false,
         focused: false
     };
   },
   render: function(createElement, options, state, setState, createTemplate) {
     var that = this;
+
+    var active = options.active !== undefined ? options.active : state.active;
 
     createTemplate = createTemplate || function(template, options) {
       return that.getTemplate(template)(options);
@@ -42,7 +43,7 @@ window.Button = {
         "dx-button-has-text": true,
         "dx-state-invisible": !options.visible,
         "dx-state-disabled": !!options.disabled,
-        "dx-state-active": options.active,
+        "dx-state-active": active,
         "dx-state-hover": state.hover,
         "dx-state-focused": state.focused
     };
@@ -65,12 +66,12 @@ window.Button = {
           mouseleave: function() {
             setState({ hover: false });
           },
-          /*mousedown: function() {
+          mousedown: function() {
             setState({ active: true });
           },
           mouseup: function() {
             setState({ active: false });
-          },*/
+          },
           focusin: function() {
             setState({ focused: true });
           },

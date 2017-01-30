@@ -4,10 +4,10 @@ import { DxComponent }  from './dx.component';
 import { DxTemplateHost } from './dx.template.host';
 
 @Component({
-  selector: 'dx-radio-button',
+  selector: 'dx-radio-group',
   template: ''
 })
-export class DxRadioButton extends DxComponent implements OnChanges {
+export class DxRadioGroup extends DxComponent implements OnChanges {
   @Input() visible: boolean = true;
   @Input() disabled: boolean = false;
   @Input() type: string = 'normal';
@@ -26,6 +26,6 @@ export class DxRadioButton extends DxComponent implements OnChanges {
 
   
   ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
-    window.v.createComponent(this.el.nativeElement, window.RadioButton, this, this, this.vDomRenderer);
+    window.v.createComponent(this.el.nativeElement, window.RadioGroup, this, this, this.vDomRenderer);
   }
 }
